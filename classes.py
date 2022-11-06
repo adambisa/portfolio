@@ -1,5 +1,5 @@
 import random, string, datetime,time,secrets
-from test_script import get_basic_check_data
+
 
 
 class Check:
@@ -11,10 +11,8 @@ class Check:
         self.secret_key=secret_key
         self.status=status
     def check(self, id :str, last_ping:str, last_ping_timestamp:str,name:str, secret_key:str,status:str):
-        id=''.join([random.choice(string.ascii_letters
-            + string.digits) for n in range(32)])
-        new_check=Check(id, last_ping=datetime.datetime.now(),last_ping_timestamp=round(time.time()),name=get_basic_check_data()["name"],secret_key=secrets.token_urlsafe(16),status='ok')
-class Schedule:
+        pass
+class Schedule():
     def __init__(self, id, period, grace, secret_key):
         self.id=id
         self.period=period
